@@ -1,0 +1,123 @@
+research_upwork_website_task:
+  description: >
+    Analyze the provided  website  {company_domain},
+    description {job_skills}. Focus on keywords and search for the job ids based on the given keywords.
+    Compile a report summarizing these insights, specifically with the given keywords.
+  parameters: >
+    keywords: ["Agent", "AI"] 
+  expected_output: >
+    All jobs related to the keywords provided, a list of jobs, links, date posted.
+
+write_to_csv_task:
+  description: >
+    Review the job id for the role {keywrods}. Check for link, date posted, grammatical accuracy,
+    and alignment with the keywords provided. Write it to csv in a clean and crisp. Update the csv everytime a new write is happening.
+    feedback for any necessary revisions.
+  expected_output: >
+    A polished, error-free job ids, links and date posted written to csv.
+    Feedback on potential improvements and final approval for publishing. Formatted in csv.
+
+# research_role_requirements_task:
+#   description: >
+#     Based on the hiring manager's needs: {hiring_needs}, identify the key skills, experiences,
+#     and qualities the ideal candidate should possess for the role. Consider the company's current projects,
+#     its competitive landscape, and industry trends. Prepare a list of recommended job requirements
+#     and qualifications that align with the company's needs and values.
+#   expected_output: >
+#     A list of recommended skills, experiences, and qualities for the ideal candidate, aligned with
+#     the company's culture, ongoing projects, and the specific role's requirements.
+
+# draft_job_posting_task:
+#   description: >
+#     Draft a job posting for the role described by the hiring manager: {hiring_needs}.
+#     Use the insights on {company_description} to start with a compelling introduction,
+#     followed by a detailed role description, responsibilities, and required skills and qualifications.
+#     Ensure the tone aligns with the company's culture and incorporate any unique benefits or
+#     opportunities offered by the company. Specific benefits: {specific_benefits}.
+#   expected_output: >
+#     A detailed, engaging job posting that includes an introduction, role description, responsibilities,
+#     requirements, and unique company benefits. The tone should resonate with the company's culture
+#     and values, aimed at attracting the right candidates.
+
+# review_and_edit_job_posting_task:
+#   description: >
+#     Review the draft job posting for the role {hiring_needs}. Check for clarity, engagement, grammatical accuracy,
+#     and alignment with the company's culture and values. Edit and refine the content, ensuring it speaks directly
+#     to the desired candidates and accurately reflects the role's unique benefits and opportunities. Provide
+#     feedback for any necessary revisions.
+#   expected_output: >
+#     A polished, error-free job posting that is clear, engaging, and perfectly aligned with the company's culture and values.
+#     Feedback on potential improvements and final approval for publishing. Formatted in markdown.
+
+# # industry_analysis_task:
+# #   description: >
+# #     Conduct an in-depth analysis of the industry related to the company's domain {company_domain}.
+# #     Investigate current trends, challenges, and opportunities within the industry, utilizing market reports,
+# #     recent developments, and expert opinions. Assess how these factors could impact the role being hired
+# #     for and the overall attractiveness of the position to potential candidates.
+# #     Consider how the company's position within this industry and its response to these trends could be leveraged to attract top talent.
+# #     Include in your report how the role contributes to addressing industry challenges or seizing opportunities.
+# #   expected_output: >
+# #     A detailed analysis report that identifies major industry trends, challenges, and opportunities relevant
+# #     to the company's domain and the specific job role. This report should provide strategic insights on positioning
+# #     the job role and the company as an attractive choice for potential candidates.
+
+# analyse_and_research_jd_task:
+#   description: >
+#     Review the input job description specified file path {path_to_job} to extract the key requirements and Parse the job description to identify essential skills, qualifications, and experience,
+#     categorize and Classify requirements into must-have and nice-to-have categories, generate and create tags for role matching (e.g., Full Stack Developer, Python, etc.) and
+#     generate weight matrix and assign the weights to each key requirement for prioritization.
+#   expected_output: >
+#      A detailed list of key skills, qualifications , experience, tools, requirement_categories, tags, weight_matrix  from the job description. 
+
+# analyse_and_research_resume_task:
+#   description: > 
+#     Parse the CV provided in the specified file paths and extract key information, including skills, work experience, education, and certifications. 
+#     Compare the extracted information against the provided job description (JD) using similarity algorithms to evaluate the suitability of each resume. 
+#     Calculate a fit score for each resume and identify specific gaps relative to the job description. Based on the fit score and identified gaps,
+#     rank the resumes in ascending order of suitability, with the least fit first and the best fit last. If you there's more than one input, research all of them.
+#       Resumes: {{ resume_path_file3 }}, {{ resume_path_file1 }}, {{ resume_path_file2 }}.
+#       inputs:
+#       - resume_path_file3
+#       - resume_path_file1
+#       - resume_path_file2
+
+#   expected_output: > 
+#     A detailed list of keywords extracted (skills, experience) and the list of resumes on the basis of fit score and gaps in ascending order.  
+
+
+# research_screening_questions_task:
+#   description: >
+#     Analyze the provided weight_matrix from analyse_and_research_jd_task . Focus on extracting tech screening questions that screen for alignment for job's requirements.
+#     Ensure relevance to the provided JD and focus on must have and weight matrix for tech skills screening questions. If you there's more than one input, research all of them. 
+#   expected_output: >
+#     A set of specific screening questions tailored to the JD requirements, highlighting areas of analyse_and_research_resume_task.
+#     Include reasoning for each question based on the JD.  
+    
+
+# search_screening_questions_task:
+#     description: >
+#       Compare the analyse_and_research_jd_task and analyse_and_research_resume_task to identify potential matches.
+#       Search for existing tech screening questions to evaluate the candidate's tech
+#       compatibility with the role based on tech skills and experience.If you there's more than one input, research all of them.
+#     expected_output: >
+#       A list of pre-existing questions that closely match the JD requirements 
+#       and resume highlights. Include details of the match logic and any gaps 
+#       identified during the search.
+
+# review_and_edit_screening_questions_task:
+#   description: >
+#     Review the set of screening questions generated from the analysis of the job description (JD) 
+#     and resume. Evaluate the relevance, clarity, and alignment of each question with the role's 
+#     requirements and expectations. Suggest edits or refinements to improve their effectiveness.
+#   expected_output: >
+#     A refined and optimized set of tech screening questions. Each question should be clear, 
+#     concise, and directly related to the skills, experience, and qualifications outlined 
+#     in the JD. Provide justifications for any edits or modifications to ensure transparency 
+#     in the review process. The output should seperate each set of questions seperately for each input resumes. Name the output with resume input names.
+#     Show only for the resumes which has match more than 50% with JD.
+
+
+
+
+
